@@ -6,10 +6,21 @@ td {
   background-color: rgb(255, 247, 211);
 }
 
+#position {
+  max-width: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  border: 1px solid black;
+  float: right;
+  margin-right: 300px;
+}
+
 table, tr {
   margin: 0;
   border-collapse: collapse;
   border: 2px solid black;
+  z-index: 1;
+
 }
 
 div.string {
@@ -18,4 +29,14 @@ div.string {
   margin: 0 auto;
   border-right: 3px grey dotted;
   border-left: 3px grey dotted;
+  z-index: 1;
+
+}
+
+div.fretted{
+  z-index: -2;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
 }
