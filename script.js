@@ -15,11 +15,30 @@ function drawGuitarTable (numStrings, numFrets){
   $("main").append(table);
   $("td").append(`<div class="string"></div>`);
   $("td").mouseover(getStringAndFret);
-  $("td").click(addDot)
+  $("td").click( (evt )=> addDot(evt) )
 }
 
-function addDot(){
-  $(this).children(".string").append("<div class='fretted'></div>")
+function addDot(evt){
+  // evt.stopPropagation()
+  let el = $(evt.target)
+  console.log(el);
+  console.log(!!el.find(".fretted").length);
+
+  if ( el.find(".fretted").length ){
+    el.find(".fretted").remove()
+  } else {
+    if ( el.hasClass(".string") ){
+      el.append("<div class='fretted'></div>")
+    } else {
+      el.children(".string").append("<div class='fretted'></div>")
+    }
+  }
+  console.log(!!el.find(".fretted").length);
+}
+
+function fretNote(string, fret){
+
+
 }
 
 function getStringAndFret(){
